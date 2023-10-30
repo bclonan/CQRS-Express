@@ -172,40 +172,6 @@ Follow RESTful conventions when creating API endpoints. Ensure that each endpoin
 Once the back-end has been updated, integrate the new features into the front-end. Use the application's state management and UI libraries to create a seamless user experience.
 
 ```jsx
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
-function CreditScore({ userId }) {
-  const [creditScore, setCreditScore] = useState(null);
-
-  useEffect(() => {
-    async function fetchCreditScore() {
-      const response = await axios.get(`/credit-score/${userId}`);
-      setCreditScore(response.data.creditScore);
-    }
-    fetchCreditScore();
-  }, [userId]);
-
-  return (
-    <div>
-      <h1>Credit Score</h1>
-      {creditScore !== null ? <p>{creditScore}</p> : <p>Loading...</p>}
-    </div>
-  );
-}
-
-export default CreditScore;
-```
-
-#### 5. Testing
-
-Ensure that all new features, models, and endpoints are thoroughly tested. Write unit tests and integration tests to verify that everything works as expected.
-
-
-## Example usage in react 
-
-
-```javascript
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -239,9 +205,9 @@ export default LoanOffers;
 ```
 
 
-### Example with page meta 
+#### Example with page meta 
 
-```javascript
+```jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -277,3 +243,8 @@ function LoanOffers({ sessionId }) {
 export default LoanOffers;
 
 ```
+
+#### 5. Testing
+
+Ensure that all new features, models, and endpoints are thoroughly tested. Write unit tests and integration tests to verify that everything works as expected.
+
